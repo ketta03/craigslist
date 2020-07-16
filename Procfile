@@ -1,1 +1,1 @@
-web gunicorn ketta's_list.wgsi
+web: gunicorn codedaddies_list.wsgi
