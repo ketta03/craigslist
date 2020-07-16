@@ -1,0 +1,1 @@
+web gunicorn ketta's_list.wgsi
