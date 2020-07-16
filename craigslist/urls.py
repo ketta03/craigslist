@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib import admin
 from django.urls import path, include
-from myapp import views
+from my_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('myapp.urls')),
+    path('', include('my_app.urls')),
+
 ]
