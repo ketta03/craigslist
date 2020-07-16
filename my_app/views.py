@@ -1,7 +1,7 @@
 import requests
+from requests.compat import quote_plus
 from django.shortcuts import render
 from bs4 import BeautifulSoup
-from requests.compat import quote_plus
 
 BASE_CRAIGSLIST_URL = 'https://losangeles.craigslist.org/search/?query={}'
 
@@ -13,8 +13,10 @@ def home(request):
 
 def new_search(request):
     search = request.POST.get('search')
+    final_url = BASE_CRAIGSLIST_URL.format(quote_plus(search))
+    print(final_url)
     response = requests.get('https://losangeles.craigslist.org/search/bbb?query=python%20tutor&sort=rel')
-    data = response.txt
+    data = response.text
     print(data)
 
     stuff_for_frontend = {
